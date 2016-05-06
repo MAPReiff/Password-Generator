@@ -19,15 +19,16 @@ public class Password {
 		Float number3 = new Float(JOptionPane.showInputDialog(null, "Input your month of birth (Number)."));
 
 		Float number4 = new Float(JOptionPane.showInputDialog(null,
-				"Input use for this password (1):Email (2):Game (3):Application (4):Other"));
+				"Input use for this password (1):Email (2):Game (3):Application (4):Other (Use Number)"));
 
-		JOptionPane.showMessageDialog(null, "Your Password is "
-				+ number1.floatValue() * number3.floatValue() * number4.floatValue() * number2.floatValue());
+		Float result = number1.floatValue() * number3.floatValue() * number4.floatValue() * number2.floatValue() * 23;
+
+		JOptionPane.showMessageDialog(null, "Your Password is " + result);
 
 		try (PrintWriter out = new PrintWriter(cal.getTimeInMillis() + ".txt")) {
 
-			out.println("Your Password is "
-					+ number1.floatValue() * number3.floatValue() * number4.floatValue() * number2.floatValue());
+			out.println("Enjoy your password!");
+			out.println("Your Password is " + result);
 
 		}
 
